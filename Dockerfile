@@ -26,3 +26,4 @@ RUN docker-php-ext-enable mongodb
 RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
 
 WORKDIR /home/source/main
+
