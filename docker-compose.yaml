@@ -3,7 +3,7 @@ services:
 
   mysql:
     image: mysql:5.7
-    container_name: mysql
+    container_name: mysql-catalogo
     platform: linux/x86_64
     ports:
       - "3306:3306"
@@ -11,7 +11,7 @@ services:
       - mysql-volumes:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: admin12345678
-      MYSQL_DATABASE: todo
+      MYSQL_DATABASE: CatalogoServicosdb
 
   laravel-app:
     build:
@@ -24,7 +24,7 @@ services:
   nginx:
     build:
       context: ./docker/nginx
-    container_name: todo-nginx
+    container_name: catalogo-nginx
     ports:
       - "8000:80"
     depends_on:
